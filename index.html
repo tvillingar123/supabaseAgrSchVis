@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Balcony Dashboard</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <h1>Balcony Data Dashboard</h1>
+        </header>
+        
+        <!-- 🛠 Sticky Toolbar -->
+        <div id="toolbar">
+            <button id="theme-toggle">Toggle Theme</button>
+            <div id="time-buttons">
+                <button data-range="all" class="active">All</button>
+                <button data-range="month">Last Month</button>
+                <button data-range="week">Last Week</button>
+                <button data-range="day">Last Day</button>
+            </div>
+        </div>
+        
+        <main>
+            
+            <!-- Collapsible charts -->
+            <div class="grid">
+                
+                <details class="chart-panel" open>
+                    <summary>Soil Moisture</summary>
+                    <div id="chart-soil" class="chart"></div>
+                </details>
+                
+                <details class="chart-panel" open>
+                    <summary>UV Index</summary>
+                    <div id="chart-uv" class="chart chart-full"></div>
+                </details>
+                
+                <details class="chart-panel">
+                    <summary>Temperature</summary>
+                    <div id="chart-temp" class="chart"></div>
+                </details>
+                
+                <details class="chart-panel">
+                    <summary>Humidity</summary>
+                    <div id="chart-hum" class="chart"></div>
+                </details>
+                
+                <details class="chart-panel">
+                    <summary>Air Pressure</summary>
+                    <div id="chart-airp" class="chart"></div>
+                </details>
+                
+                <details class="chart-panel">
+                    <summary>Rainfall</summary>
+                    <div id="chart-rain" class="chart"></div>
+                </details>
+                
+                <details class="chart-panel">
+                    <summary>Wind (m/s)</summary>
+                    <div id="chart-wind" class="chart"></div>
+                </details>
+                
+                <details class="chart-panel">
+                    <summary>Soil Correlations</summary>
+                    <div id="correlation" class="chart chart-full"></div>
+                </details>
+                
+                <details class="chart-panel" open>
+                    <summary>Latest Measurements</summary>
+                    <div id="latest-bottom" class="chart chart-full"></div>
+                </details>
+            </div>
+        </main>
+        
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script src="main.js"></script>
+        <div class="tooltip" id="tooltip"></div>
+        
+    </body>
+</html>
